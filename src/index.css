@@ -3,28 +3,28 @@
 :root {
   --primary-color: #2e7d32;
   --fs-color-primary: #2e7d32;
-  --fs-color-secondary: #1b382b;
-  --fs-color-success: #2e7d32;
-  --fs-color-alert: #d97706;
-  --fs-color-base: #4b5563;
-  --ht-green: #1b382b;
-  --ht-ink: #1f2937;
-  --ht-body: #4b5563;
-  --ht-mute: #6b7280;
+  --fs-color-secondary: #16302a;
+  --fs-color-success: #16302a;
+  --fs-color-alert: #e0402b;
+  --fs-color-base: #5f5f61;
+  --ht-green: #16302a;
+  --ht-ink: #2f2f31;
+  --ht-body: #5f5f61;
+  --ht-mute: #8f8f92;
   --ht-bg: #ffffff;
   --ht-bg-soft: #f8faf8;
   --ht-blush-50: #f0fdf4;
   --ht-blush-100: #e8f5e9;
   --ht-blush-200: #c8e6c9;
   --ht-blush-300: #81c784;
-  --ht-line: #e2e8f0;
-  --ht-line-soft: #f1f5f9;
+  --ht-line: #ececee;
+  --ht-line-soft: #f4f4f5;
   --ht-radius: 14px;
   --ht-radius-sm: 12px;
   --ht-display: 'Be Vietnam Pro', "Playfair Display", "Times New Roman", serif;
   --ht-foot-bg: #f4f7f4;
-  --ht-foot-line: #e2e8f0;
-  --ht-foot-title: #1f2937;
+  --ht-foot-line: #dcfce7;
+  --ht-foot-title: #16302a;
   --ht-foot-body: #4b5563;
 }
 
@@ -46,7 +46,7 @@ body {
   padding-right: 15px;
 }
 
-/* Section Title & Floral Divider */
+/* Section Title & Herbal Divider (Exact match to hoatuoi-thamtran structure) */
 .ht-sec-header {
   text-align: center;
   margin-bottom: 34px;
@@ -76,16 +76,15 @@ body {
 }
 
 .ht-sec-title-text::after {
-  content: "🌿";
+  content: "";
   display: block;
   width: 96px;
-  height: 20px;
-  margin: 10px auto 0;
-  font-size: 16px;
-  text-align: center;
+  height: 14px;
+  margin: 15px auto 0;
+  background: url("/images/icons/title-divider.svg") center/contain no-repeat;
 }
 
-/* Category & Product Cards */
+/* Category & Product Cards (Exact 1px border, 14px radius, -4px hover) */
 .ht-card {
   overflow: hidden;
   height: 100%;
@@ -100,57 +99,43 @@ body {
   border-color: var(--ht-blush-300);
 }
 
-.ht-card:hover .ht-card-title {
-  color: var(--fs-color-primary);
-}
-
-.ht-card-title {
-  transition: color 0.18s ease;
-}
-
-/* Category Circle / Card */
-.ht-cat-img-wrap {
+.ht-card-img-wrap {
   position: relative;
-  aspect-ratio: 1 / 1;
+  width: 100%;
+  padding-top: 133.333%; /* 3:4 aspect ratio (450x600) */
   overflow: hidden;
-  border-radius: 9999px;
-  margin: 0 auto 16px;
-  width: 140px;
-  box-shadow: 0 4px 14px rgba(46, 125, 50, 0.12);
+  background: #f4f7f4;
 }
 
-.ht-cat-img-wrap img {
+.ht-card-img-wrap img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.ht-card:hover .ht-cat-img-wrap img {
-  transform: scale(1.08);
+.ht-card:hover .ht-card-img-wrap img {
+  transform: scale(1.04);
 }
 
-/* Hero Section */
-.ht-hero-box {
-  background: linear-gradient(135deg, #1b382b 0%, #2e7d32 100%);
-  color: #ffffff;
-  border-radius: 20px;
-  padding: 48px 36px;
+/* Footer herbal watermark */
+.ht-footer-widgets {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 0 44px;
+  border-top: 1px solid var(--ht-foot-line);
+  background-color: var(--ht-foot-bg);
+  background-image: url("/images/footer-bloom.svg");
+  background-repeat: no-repeat;
+  background-position: right -14px bottom -18px;
+  background-size: 300px auto;
 }
 
-/* Zalo Pulse Floating */
-@keyframes zalo-pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.6);
-  }
-  70% {
-    box-shadow: 0 0 0 16px rgba(46, 125, 50, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(46, 125, 50, 0);
-  }
-}
-
-.zalo-float-btn {
-  animation: zalo-pulse 2s infinite;
+.ht-footer-divider {
+  width: 34px;
+  height: 2px;
+  margin: 13px 0 20px;
+  background-color: var(--fs-color-primary);
 }

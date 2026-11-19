@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 import {
   LayoutDashboard,
-  Flower2,
+  Leaf,
   FileText,
   FolderOpen,
   MessageSquare,
@@ -87,21 +87,21 @@ const AdminDashboardPage: React.FC = () => {
             Tổng quan Quản trị – {settings.brandName}
           </h1>
           <p className="text-sm text-slate-500 mt-1 mb-0">
-            Quản lý mẫu hoa, đăng bài viết chuẩn SEO và cập nhật thông tin cửa hàng theo thời gian thực.
+            Quản lý sản phẩm thảo dược, đăng bài viết chuẩn SEO và cập nhật thông tin cửa hàng theo thời gian thực.
           </p>
         </div>
 
         <div className="flex flex-wrap gap-2.5">
           <Link
             to="/admin/products/new"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#de4264] hover:bg-[#c93a5c] text-white font-semibold text-sm no-underline shadow-sm"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#2e7d32] hover:bg-[#1b5e20] text-white font-semibold text-sm no-underline shadow-sm"
           >
             <Plus size={16} />
-            Thêm mẫu hoa mới
+            Thêm sản phẩm mới
           </Link>
           <Link
             to="/admin/posts/new"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#28337e] hover:bg-[#1e2660] text-white font-semibold text-sm no-underline shadow-sm"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#16302a] hover:bg-[#0f221e] text-white font-semibold text-sm no-underline shadow-sm"
           >
             <Plus size={16} />
             Viết bài mới
@@ -114,17 +114,17 @@ const AdminDashboardPage: React.FC = () => {
         <div className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-              Tổng mẫu hoa
+              Tổng sản phẩm
             </span>
-            <span className="w-10 h-10 rounded-xl bg-rose-50 text-[#de4264] flex items-center justify-center">
-              <Flower2 size={20} />
+            <span className="w-10 h-10 rounded-xl bg-emerald-50 text-[#2e7d32] flex items-center justify-center">
+              <Leaf size={20} />
             </span>
           </div>
           <div className="text-3xl font-extrabold text-slate-900 mt-3">
             {products.length}
           </div>
           <div className="text-xs text-emerald-600 font-medium mt-1">
-            {publishedProducts} mẫu đang hiển thị
+            {publishedProducts} sản phẩm đang hiển thị
           </div>
         </div>
 
@@ -165,7 +165,7 @@ const AdminDashboardPage: React.FC = () => {
         <div className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-              Danh mục hoa
+              Danh mục thảo dược
             </span>
             <span className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
               <FolderOpen size={20} />
@@ -175,7 +175,7 @@ const AdminDashboardPage: React.FC = () => {
             {categories.length}
           </div>
           <div className="text-xs text-slate-500 mt-1">
-            Bó hoa, Giỏ hoa, Khai trương, Viếng
+            Đồ ngâm rượu, Tam thất bắc, Trái nhàu, Thảo dược
           </div>
         </div>
       </div>
@@ -230,11 +230,11 @@ const AdminDashboardPage: React.FC = () => {
         <div className="bg-white rounded-2xl border border-slate-200/80 p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-base font-bold text-slate-900 m-0">
-              Đơn đặt hoa & Yêu cầu tư vấn gần đây
+              Đơn đặt hàng & Yêu cầu tư vấn gần đây
             </h3>
             <Link
               to="/admin/orders"
-              className="text-xs font-semibold text-[#de4264] hover:underline no-underline"
+              className="text-xs font-semibold text-[#2e7d32] hover:underline no-underline"
             >
               Quản lý đơn →
             </Link>
@@ -247,7 +247,7 @@ const AdminDashboardPage: React.FC = () => {
                     {o.customerName} –{' '}
                     <a
                       href={`tel:${o.phone}`}
-                      className="text-[#de4264] no-underline"
+                      className="text-[#2e7d32] no-underline"
                     >
                       {o.phone}
                     </a>
@@ -255,7 +255,7 @@ const AdminDashboardPage: React.FC = () => {
                   <span
                     className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold ${
                       o.status === 'new'
-                        ? 'bg-rose-50 text-[#de4264]'
+                        ? 'bg-amber-50 text-amber-700'
                         : 'bg-emerald-50 text-emerald-700'
                     }`}
                   >
@@ -329,7 +329,7 @@ const AdminPostsPage: React.FC = () => {
             Quản lý Bài viết ({filtered.length})
           </h2>
           <p className="text-xs text-slate-500 mt-1 mb-0">
-            Đăng bài chia sẻ kinh nghiệm chọn hoa, tin tức khuyến mãi và bài SEO.
+            Đăng bài chia sẻ kinh nghiệm ngâm rượu, phân biệt dược liệu chuẩn và chăm sóc sức khỏe.
           </p>
         </div>
 
@@ -450,7 +450,7 @@ const AdminPostEditorPage: React.FC = () => {
   const [title, setTitle] = useState(existing?.title || '');
   const [slug, setSlug] = useState(existing?.slug || '');
   const [category, setCategory] = useState(
-    existing?.category || 'Cẩm nang chọn hoa'
+    existing?.category || 'Cẩm nang ngâm rượu'
   );
   const [date, setDate] = useState(
     existing?.date || new Date().toISOString().slice(0, 10)
@@ -459,13 +459,12 @@ const AdminPostEditorPage: React.FC = () => {
     existing?.status || 'published'
   );
   const [image, setImage] = useState(
-    existing?.image ||
-      'https://hoatuoi.webmau68.com/wp-content/uploads/2026/08/bo-hoa-n330-450x600.jpg'
+    existing?.image || '/images/products/ba-kich-tim.jpg'
   );
   const [excerpt, setExcerpt] = useState(existing?.excerpt || '');
   const [content, setContent] = useState(
     existing?.content ||
-      '<h2>1. Giới thiệu mẫu hoa</h2>\n<p>Nhập nội dung chi tiết bài viết tại đây...</p>'
+      '<h2>1. Giới thiệu thảo dược</h2>\n<p>Nhập nội dung chi tiết bài viết tại đây...</p>'
   );
   const [previewMode, setPreviewMode] = useState(false);
   const [savedToast, setSavedToast] = useState(false);
@@ -550,7 +549,7 @@ const AdminPostEditorPage: React.FC = () => {
 
       {previewMode ? (
         <div className="p-6 rounded-2xl border border-slate-200 bg-slate-50/50 space-y-4">
-          <span className="inline-block px-3 py-1 rounded-full bg-rose-50 text-[#de4264] text-xs font-bold">
+          <span className="inline-block px-3 py-1 rounded-full bg-emerald-50 text-[#2e7d32] text-xs font-bold">
             {category}
           </span>
           <h1 className="text-2xl font-extrabold text-slate-900">{title}</h1>
@@ -774,10 +773,10 @@ const AdminProductsPage: React.FC = () => {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <div className="bg-white p-6 rounded-2xl shadow-xl max-w-sm w-full">
             <h3 className="text-lg font-bold text-slate-900 mb-2">
-              Xác nhận xóa mẫu hoa
+              Xác nhận xóa sản phẩm
             </h3>
             <p className="text-sm text-slate-600 mb-6">
-              Bạn có chắc muốn xóa mẫu <strong>{deleteTarget.title}</strong>?
+              Bạn có chắc muốn xóa sản phẩm <strong>{deleteTarget.title}</strong>?
             </p>
             <div className="flex justify-end gap-2.5">
               <button
@@ -793,7 +792,7 @@ const AdminProductsPage: React.FC = () => {
                 }}
                 className="px-4 py-2 rounded-xl bg-red-600 text-white text-sm font-semibold border-0 cursor-pointer"
               >
-                Xóa mẫu hoa
+                Xóa sản phẩm
               </button>
             </div>
           </div>
@@ -803,10 +802,10 @@ const AdminProductsPage: React.FC = () => {
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
         <div>
           <h2 className="text-xl font-bold text-slate-900 m-0">
-            Quản lý Mẫu hoa ({filtered.length})
+            Quản lý Sản phẩm thảo dược ({filtered.length})
           </h2>
           <p className="text-xs text-slate-500 mt-1 mb-0">
-            Thêm mẫu hoa mới, chỉnh sửa giá bán và hình ảnh từng mẫu.
+            Thêm sản phẩm mới, chỉnh sửa giá bán và hình ảnh thực tế từng mặt hàng.
           </p>
         </div>
 
@@ -828,16 +827,16 @@ const AdminProductsPage: React.FC = () => {
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Tìm mã hoa (VD: N145)..."
+            placeholder="Tìm mã SP (VD: BK01)..."
             className="h-10 px-3.5 rounded-xl border border-slate-200 text-sm outline-none"
           />
 
           <Link
             to="/admin/products/new"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#de4264] hover:bg-[#c93a5c] text-white font-semibold text-sm no-underline"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#2e7d32] hover:bg-[#1b5e20] text-white font-semibold text-sm no-underline"
           >
             <Plus size={16} />
-            Thêm mẫu hoa
+            Thêm sản phẩm
           </Link>
         </div>
       </div>
@@ -865,7 +864,7 @@ const AdminProductsPage: React.FC = () => {
                 <div className="text-sm font-bold text-slate-800 truncate">
                   {item.title}
                 </div>
-                <div className="text-sm font-extrabold text-[#de4264] mt-0.5">
+                <div className="text-sm font-extrabold text-[#2e7d32] mt-0.5">
                   {item.priceText}
                 </div>
               </div>
@@ -898,21 +897,20 @@ const AdminProductEditorPage: React.FC = () => {
   const { products, categories, saveProduct } = useCMS();
   const existing = id ? products.find((p) => p.id === id) : undefined;
 
-  const [code, setCode] = useState(existing?.code || 'N501');
-  const [title, setTitle] = useState(existing?.title || 'Bó Hoa – N501');
+  const [code, setCode] = useState(existing?.code || 'HT01');
+  const [title, setTitle] = useState(existing?.title || 'Thảo Dược Rừng – HT01');
   const [categorySlug, setCategorySlug] = useState(
-    existing?.categorySlug || 'bo-hoa'
+    existing?.categorySlug || 'do-ngam-ruou'
   );
   const [priceNumber, setPriceNumber] = useState(
-    existing?.priceNumber || 500000
+    existing?.priceNumber || 350000
   );
   const [image, setImage] = useState(
-    existing?.image ||
-      'https://hoatuoi.webmau68.com/wp-content/uploads/2026/08/bo-hoa-n145-450x600.jpg'
+    existing?.image || '/images/products/tam-that-bac-52.jpg'
   );
   const [description, setDescription] = useState(
     existing?.description ||
-      'Hoa tươi nhập mới mỗi sáng, thiết kế theo yêu cầu, gửi ảnh thành phẩm trước khi giao.'
+      'Thảo dược tự nhiên đất rừng Nho Quan - Cúc Phương, sơ chế sạch, gửi ảnh thực tế duyệt trước khi đóng thùng.'
   );
   const [status, setStatus] = useState<'published' | 'draft'>(
     existing?.status || 'published'
@@ -958,7 +956,7 @@ const AdminProductEditorPage: React.FC = () => {
           <ArrowLeft size={18} />
         </Link>
         <h2 className="text-xl font-bold text-slate-900 m-0">
-          {existing ? `Sửa mẫu hoa: ${existing.title}` : 'Thêm mẫu hoa mới'}
+          {existing ? `Sửa sản phẩm: ${existing.title}` : 'Thêm sản phẩm thảo dược mới'}
         </h2>
       </div>
 
@@ -966,7 +964,7 @@ const AdminProductEditorPage: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-xs font-bold uppercase text-slate-500 mb-1">
-              Mã mẫu hoa *
+              Mã sản phẩm *
             </label>
             <input
               type="text"
@@ -979,7 +977,7 @@ const AdminProductEditorPage: React.FC = () => {
 
           <div>
             <label className="block text-xs font-bold uppercase text-slate-500 mb-1">
-              Tên mẫu hoa hiển thị *
+              Tên sản phẩm hiển thị *
             </label>
             <input
               type="text"
@@ -992,7 +990,7 @@ const AdminProductEditorPage: React.FC = () => {
 
           <div>
             <label className="block text-xs font-bold uppercase text-slate-500 mb-1">
-              Danh mục hoa
+              Danh mục thảo dược
             </label>
             <select
               value={categorySlug}
@@ -1017,14 +1015,14 @@ const AdminProductEditorPage: React.FC = () => {
               step={10000}
               value={priceNumber}
               onChange={(e) => setPriceNumber(Number(e.target.value))}
-              className="w-full h-11 px-3.5 rounded-xl border border-slate-200 text-sm font-bold text-[#de4264] outline-none"
+              className="w-full h-11 px-3.5 rounded-xl border border-slate-200 text-sm font-bold text-[#2e7d32] outline-none"
             />
           </div>
         </div>
 
         <div>
           <label className="block text-xs font-bold uppercase text-slate-500 mb-1.5">
-            Hình ảnh mẫu hoa
+            Hình ảnh sản phẩm
           </label>
           <div className="flex flex-wrap items-start gap-4">
             <img
@@ -1069,10 +1067,10 @@ const AdminProductEditorPage: React.FC = () => {
 
         <button
           type="submit"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#de4264] hover:bg-[#c93a5c] text-white font-bold text-sm border-0 cursor-pointer"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#2e7d32] hover:bg-[#1b5e20] text-white font-bold text-sm border-0 cursor-pointer"
         >
           <Save size={17} />
-          Lưu mẫu hoa
+          Lưu sản phẩm
         </button>
       </form>
     </div>
@@ -1080,7 +1078,7 @@ const AdminProductEditorPage: React.FC = () => {
 };
 
 /* ==========================================================================
-   4. QUẢN LÝ ĐƠN ĐẶT HOA & LIÊN HỆ (/admin/orders)
+   4. QUẢN LÝ ĐƠN ĐẶT HÀNG & LIÊN HỆ (/admin/orders)
    ========================================================================== */
 const AdminOrdersPage: React.FC = () => {
   const { orders, updateOrderStatus, deleteOrder } = useCMS();
@@ -1088,10 +1086,10 @@ const AdminOrdersPage: React.FC = () => {
   return (
     <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs">
       <h2 className="text-xl font-bold text-slate-900 mb-1">
-        Đơn đặt hoa & Khách hàng liên hệ ({orders.length})
+        Đơn đặt hàng & Khách hàng liên hệ ({orders.length})
       </h2>
       <p className="text-xs text-slate-500 mb-6">
-        Danh sách khách đặt hoa từ giỏ hàng và gửi form tư vấn trên website.
+        Danh sách khách đặt thảo dược từ giỏ hàng và gửi form tư vấn trên website.
       </p>
 
       <div className="space-y-3">
@@ -1107,7 +1105,7 @@ const AdminOrdersPage: React.FC = () => {
                 </span>
                 <a
                   href={`tel:${o.phone}`}
-                  className="font-bold text-sm text-[#de4264] no-underline"
+                  className="font-bold text-sm text-[#2e7d32] no-underline"
                 >
                   {o.phone}
                 </a>
@@ -1119,7 +1117,7 @@ const AdminOrdersPage: React.FC = () => {
                 <strong>[{o.occasion}]</strong> {o.message}
               </div>
               {o.totalPrice && (
-                <div className="text-xs font-bold text-[#de4264]">
+                <div className="text-xs font-bold text-[#2e7d32]">
                   Tổng cộng: {o.totalPrice}
                 </div>
               )}
@@ -1134,7 +1132,7 @@ const AdminOrdersPage: React.FC = () => {
                 className="h-9 px-3 rounded-lg border border-slate-200 text-xs font-bold bg-white"
               >
                 <option value="new">Mới tiếp nhận</option>
-                <option value="processing">Đang cắm & giao</option>
+                <option value="processing">Đang đóng gói & giao</option>
                 <option value="completed">Đã hoàn tất</option>
               </select>
               <button
@@ -1184,7 +1182,7 @@ const AdminSettingsPage: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'hoatuoi-cms-backup.json';
+    a.download = 'hathaomoc-cms-backup.json';
     a.click();
   };
 
@@ -1196,7 +1194,7 @@ const AdminSettingsPage: React.FC = () => {
             Cài đặt Thương hiệu & Thông tin Website
           </h2>
           <p className="text-xs text-slate-500 mt-1 mb-0">
-            Đổi tên tiệm hoa, số điện thoại Hotline, Zalo, địa chỉ và tiêu đề trang chủ chỉ trong 1 cú nhấp.
+            Đổi tên cơ sở, số điện thoại Hotline, Zalo, địa chỉ và tiêu đề trang chủ chỉ trong 1 cú nhấp.
           </p>
         </div>
 
@@ -1204,17 +1202,10 @@ const AdminSettingsPage: React.FC = () => {
           <button
             type="button"
             onClick={() => handlePreset('tham_tran')}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-[#de4264] text-xs font-bold border border-rose-200 cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-[#2e7d32] text-xs font-bold border border-emerald-200 cursor-pointer"
           >
             <Sparkles size={14} />
-            Nạp cấu hình Hoa Nhà Thắm Trần
-          </button>
-          <button
-            type="button"
-            onClick={() => handlePreset('original_demo')}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border-0 cursor-pointer"
-          >
-            Nạp bản gốc webmau68 (0965 000 000)
+            Khôi phục cấu hình Hà Thảo Mộc
           </button>
         </div>
       </div>
@@ -1230,7 +1221,7 @@ const AdminSettingsPage: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-xs font-bold uppercase text-slate-500 mb-1">
-              Tên thương hiệu / Tiệm hoa
+              Tên thương hiệu / Cơ sở thảo dược
             </label>
             <input
               type="text"
@@ -1266,7 +1257,7 @@ const AdminSettingsPage: React.FC = () => {
                   hotlineRaw: e.target.value.replace(/\s+/g, ''),
                 })
               }
-              className="w-full h-11 px-3.5 rounded-xl border border-slate-200 text-sm font-bold text-[#de4264] outline-none"
+              className="w-full h-11 px-3.5 rounded-xl border border-slate-200 text-sm font-bold text-[#2e7d32] outline-none"
             />
           </div>
 
@@ -1318,10 +1309,10 @@ const AdminSettingsPage: React.FC = () => {
               className="w-full h-11 px-3.5 rounded-xl border border-slate-200 bg-white text-sm font-semibold outline-none"
             >
               <option value="custom_brand">
-                Biểu tượng Hoa + Tên thương hiệu tùy chỉnh ({form.brandName})
+                Biểu tượng Lá + Tên thương hiệu ({form.brandName})
               </option>
               <option value="original_img">
-                Ảnh Logo gốc nguyên bản (Hoa Tươi)
+                Ảnh Logo tải lên từ URL
               </option>
             </select>
           </div>
@@ -1330,7 +1321,7 @@ const AdminSettingsPage: React.FC = () => {
         <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
           <button
             type="submit"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#28337e] hover:bg-[#1e2660] text-white font-bold text-sm border-0 cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#2e7d32] hover:bg-[#1b5e20] text-white font-bold text-sm border-0 cursor-pointer"
           >
             <Save size={17} />
             Lưu cấu hình Website
@@ -1348,7 +1339,7 @@ const AdminSettingsPage: React.FC = () => {
             <button
               type="button"
               onClick={resetAllToDefault}
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 text-xs font-bold border-0 cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-bold border-0 cursor-pointer"
             >
               <RefreshCw size={14} />
               Khôi phục mặc định
@@ -1361,16 +1352,16 @@ const AdminSettingsPage: React.FC = () => {
 };
 
 /* ==========================================================================
-   6. ADMIN SHELL LAYOUT (Kế thừa chuẩn AdminLayout từ Khoancocnhoi1)
+   6. ADMIN SHELL LAYOUT
    ========================================================================== */
 export const AdminPanel: React.FC = () => {
-  const { settings, applyPreset } = useCMS();
+  const { settings, products, applyPreset } = useCMS();
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const navItems = [
     { to: '/admin', icon: LayoutDashboard, label: 'Dashboard' },
-    { to: '/admin/products', icon: Flower2, label: 'Mẫu hoa (32+)' },
+    { to: '/admin/products', icon: Leaf, label: `Sản phẩm (${products.length})` },
     { to: '/admin/posts', icon: FileText, label: 'Bài viết / Tin tức' },
     { to: '/admin/orders', icon: MessageSquare, label: 'Đơn đặt & Liên hệ' },
     { to: '/admin/settings', icon: Settings, label: 'Cài đặt Website' },
@@ -1441,27 +1432,13 @@ export const AdminPanel: React.FC = () => {
 
         <div className="p-4 border-t border-slate-100 bg-slate-50 space-y-2">
           <div className="text-[11px] font-bold uppercase text-slate-400">
-            Chuyển nhanh chế độ Demo
+            Cấu hình mặc định
           </div>
           <button
             onClick={() => applyPreset('tham_tran')}
-            className={`w-full py-2 px-3 rounded-lg text-xs font-bold text-left border cursor-pointer transition-colors ${
-              settings.brandName.includes('Thắm Trần')
-                ? 'bg-[#de4264] text-white border-[#de4264]'
-                : 'bg-white text-slate-700 border-slate-200'
-            }`}
+            className="w-full py-2 px-3 rounded-lg text-xs font-bold text-left border cursor-pointer transition-colors bg-[#2e7d32] text-white border-[#2e7d32]"
           >
-            🌸 Hoa Nhà Thắm Trần
-          </button>
-          <button
-            onClick={() => applyPreset('original_demo')}
-            className={`w-full py-2 px-3 rounded-lg text-xs font-bold text-left border cursor-pointer transition-colors ${
-              settings.brandName === 'Hoa Tươi'
-                ? 'bg-[#28337e] text-white border-[#28337e]'
-                : 'bg-white text-slate-700 border-slate-200'
-            }`}
-          >
-            🌺 Bản gốc webmau68
+            🌿 Hà Thảo Mộc (Ninh Bình)
           </button>
         </div>
       </aside>
@@ -1483,7 +1460,7 @@ export const AdminPanel: React.FC = () => {
 
           <Link
             to="/"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-rose-50 text-[#de4264] text-xs font-bold no-underline"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 text-[#2e7d32] text-xs font-bold no-underline"
           >
             <ExternalLink size={13} />
             Mở trang chủ

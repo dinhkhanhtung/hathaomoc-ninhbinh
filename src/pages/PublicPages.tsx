@@ -7,7 +7,7 @@ import {
   FileText,
   Truck,
   Clock,
-  Flower2,
+  Leaf,
   Check,
   CreditCard,
   Calendar,
@@ -78,24 +78,24 @@ export const HomePage: React.FC = () => {
 
   const uspItems = [
     {
-      icon: FileText,
-      title: 'Thảo dược tự nhiên',
-      desc: 'Trong vòng 30 phút',
-    },
-    {
-      icon: Truck,
-      title: 'Giao hàng toàn quốc',
-      desc: 'Trong khu vực nội thành',
+      icon: Leaf,
+      title: 'Thảo dược rừng thật',
+      desc: 'Tuyển chọn từ Nho Quan - Cúc Phương',
     },
     {
       icon: Clock,
-      title: 'Đóng thùng chống vỡ',
-      desc: 'Chỉ trong 90 phút',
+      title: 'Men nếp truyền thống',
+      desc: 'Rượu nếp 42–45 độ êm không váng',
     },
     {
-      icon: Flower2,
-      title: 'Tư vấn bài thuốc chuẩn',
-      desc: 'Mẫu riêng, đúng ngân sách',
+      icon: Truck,
+      title: 'Đóng thùng chống vỡ',
+      desc: 'Bọc xốp 3 lớp, kiểm hàng trước khi trả',
+    },
+    {
+      icon: FileText,
+      title: 'Tư vấn tỷ lệ ngâm',
+      desc: 'Hướng dẫn bài thuốc chuẩn theo cơ địa',
     },
   ];
 
@@ -105,7 +105,7 @@ export const HomePage: React.FC = () => {
       <section
         className="ht-hero relative overflow-hidden"
         style={{
-          backgroundColor: '#f7f2f0',
+          backgroundColor: '#edf3ee',
           backgroundImage: `url("${settings.heroImage}")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center right',
@@ -113,8 +113,8 @@ export const HomePage: React.FC = () => {
           borderBottom: '1px solid var(--ht-line)',
         }}
       >
-        {/* Mobile readability overlay */}
-        <div className="absolute inset-0 bg-white/75 md:bg-transparent pointer-events-none" />
+        {/* Readability gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f4f7f4]/95 via-[#f4f7f4]/80 to-[#f4f7f4]/25 md:to-transparent pointer-events-none" />
 
         <div className="ht-container relative z-10 py-12 md:py-[72px] lg:py-[86px]">
           <div className="max-w-[540px]">
@@ -151,7 +151,7 @@ export const HomePage: React.FC = () => {
                 marginBottom: 32,
                 fontSize: 'clamp(14px, 1.15vw, 16px)',
                 lineHeight: 1.95,
-                color: '#5f5f61',
+                color: '#4b5563',
               }}
             >
               {settings.heroDesc}
@@ -172,7 +172,7 @@ export const HomePage: React.FC = () => {
                   textTransform: 'uppercase',
                   lineHeight: 1,
                 }}
-                className="inline-flex items-center justify-center gap-2.5 hover:bg-[#c93a5c] transition-colors no-underline shadow-sm"
+                className="inline-flex items-center justify-center gap-2.5 hover:bg-[#1b5e20] transition-colors no-underline shadow-sm"
               >
                 <Phone size={15} strokeWidth={2.2} />
                 <span>GỌI ĐẶT HÀNG {settings.hotline}</span>
@@ -368,7 +368,7 @@ export const HomePage: React.FC = () => {
                       fontSize: '13.5px',
                       fontWeight: 700,
                     }}
-                    className="hover:bg-[#c93a5c] transition-colors no-underline"
+                    className="hover:bg-[#1b5e20] transition-colors no-underline"
                   >
                     <span>{cat.ctaLabel}</span>
                     <ChevronRight size={15} />
@@ -377,7 +377,7 @@ export const HomePage: React.FC = () => {
               </div>
             </section>
 
-            {/* Mid-page Consultation Banner right after 2nd category (Giỏ Hoa) */}
+            {/* Mid-page Consultation Banner right after 2nd category */}
             {idx === 1 && <ConsultationBanner />}
           </React.Fragment>
         );
@@ -408,7 +408,7 @@ export const HomePage: React.FC = () => {
                   to={`/tin-tuc/${post.slug}`}
                   className="ht-card flex flex-col no-underline"
                 >
-                  <div className="relative w-full pt-[62%] overflow-hidden bg-[#f9f5f6]">
+                  <div className="relative w-full pt-[62%] overflow-hidden bg-[#f4f7f4]">
                     <img
                       src={post.image}
                       alt={post.title}
@@ -509,7 +509,7 @@ export const CategoryPage: React.FC = () => {
               : 'Tất cả sản phẩm thảo dược'}
           </h1>
           <p className="max-w-xl mx-auto mt-3 text-[15px] text-[#5f5f61] mb-0">
-            Hoa tươi nhập mới mỗi ngày, cắm đúng mẫu, gửi ảnh thành phẩm trước khi giao và miễn phí thiệp/băng rôn viết tay.
+            100% thảo dược tự nhiên và bình rượu ngâm men nếp truyền thống từ Nho Quan – Cúc Phương. Đóng thùng xốp chống vỡ, giao toàn quốc, kiểm tra hàng trước khi thanh toán.
           </p>
         </div>
       </section>
@@ -625,7 +625,7 @@ export const ProductDetailPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-11 items-start">
             {/* Left Column: Image */}
             <div className="lg:col-span-6">
-              <div className="rounded-[16px] overflow-hidden border border-[#ececee] bg-[#f9f5f6]">
+              <div className="rounded-[16px] overflow-hidden border border-[#ececee] bg-[#f4f7f4]">
                 <img
                   src={product.fullImage || product.image}
                   onError={(e) => {
@@ -639,7 +639,7 @@ export const ProductDetailPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Column: Info & Actions (100% matching step_22_shot_1_single_product.png) */}
+            {/* Right Column: Info & Actions */}
             <div className="lg:col-span-6">
               <h1
                 style={{
@@ -665,7 +665,7 @@ export const ProductDetailPage: React.FC = () => {
                     color: '#5f5f61',
                   }}
                 >
-                  Mã mẫu <strong className="text-[#16302a]">{product.code}</strong>
+                  Mã SP <strong className="text-[#16302a]">{product.code}</strong>
                 </span>
                 <Link
                   to={`/danh-muc/${product.categorySlug}`}
@@ -700,11 +700,11 @@ export const ProductDetailPage: React.FC = () => {
               <div className="flex items-center gap-2 text-[13.5px] text-[#5f5f61] mb-5">
                 <CheckCircle2 size={16} className="text-[#2e7d32] flex-shrink-0" />
                 <span>
-                  Cắm mới sau khi chốt đơn · Gửi ảnh thành phẩm để bạn duyệt trước khi giao
+                  Sơ chế sạch chuẩn bài · Gửi ảnh/video thực tế qua Zalo để bác duyệt trước khi đóng thùng
                 </span>
               </div>
 
-              {/* Dashed Free Greeting Card Box */}
+              {/* Dashed Free Instruction Box */}
               <div
                 style={{
                   border: '1px dashed #81c784',
@@ -723,7 +723,7 @@ export const ProductDetailPage: React.FC = () => {
                   />
                   <CreditCard size={17} className="text-[#2e7d32]" />
                   <span className="text-[14px] font-bold text-[#2f2f31]">
-                    Kèm thiệp viết tay
+                    Kèm tờ hướng dẫn tỷ lệ ngâm & cách dùng chi tiết
                   </span>
                   <span
                     style={{
@@ -745,7 +745,7 @@ export const ProductDetailPage: React.FC = () => {
                       type="text"
                       value={cardNote}
                       onChange={(e) => setCardNote(e.target.value)}
-                      placeholder="Nhập nội dung lời chúc trên thiệp hoặc băng rôn..."
+                      placeholder="Ghi chú yêu cầu riêng (VD: thái lát sẵn, xay bột mịn, đóng gói quà biếu...)"
                       className="w-full h-10 px-3.5 rounded-lg border border-[#81c784] bg-white text-sm outline-none"
                     />
                   </div>
@@ -796,10 +796,15 @@ export const ProductDetailPage: React.FC = () => {
                     fontSize: '14.5px',
                     fontWeight: 700,
                   }}
-                  className="hover:bg-[#c93a5c] transition-colors border-0 cursor-pointer shadow-sm"
+                  className="hover:bg-[#1b5e20] transition-colors border-0 cursor-pointer shadow-sm"
                 >
                   Đặt mua sản phẩm này
                 </button>
+              </div>
+
+              {/* Product description */}
+              <div className="mb-5 p-4 rounded-xl bg-[#f8faf8] border border-[#e2e8f0] text-[14px] leading-relaxed text-[#4b5563]">
+                {product.description}
               </div>
 
               {/* 2 Direct Action Cards (Call & Zalo) */}
@@ -816,7 +821,7 @@ export const ProductDetailPage: React.FC = () => {
                 >
                   <Phone size={22} className="text-[#2e7d32] flex-shrink-0" />
                   <span className="flex flex-col min-w-0">
-                    <small className="text-[10.5px] font-semibold uppercase tracking-wider text-[#b58fa0]">
+                    <small className="text-[10.5px] font-semibold uppercase tracking-wider text-[#6b7280]">
                       GỌI ĐẶT HÀNG NGAY
                     </small>
                     <strong className="text-[15.5px] font-bold text-[#2e7d32]">
@@ -918,23 +923,23 @@ export const AboutPage: React.FC = () => {
   const commitments = [
     {
       num: '01',
-      title: 'Đúng giờ',
-      desc: 'Cam kết khung giờ giao ngay khi chốt đơn, có ảnh xác nhận trước khi giao.',
+      title: 'Chuẩn nguồn gốc rừng',
+      desc: 'Thảo dược và đồ ngâm rừng thu hái tại vùng núi Nho Quan – Cúc Phương, tuyển chọn từng củ rễ già đủ năm.',
     },
     {
       num: '02',
-      title: 'Đúng mẫu',
-      desc: 'Cắm theo đúng ảnh bạn chọn. Không giống mẫu, chúng tôi làm lại miễn phí.',
+      title: 'Sơ chế sạch từ tâm',
+      desc: 'Ba kích rút sạch 100% lõi gỗ độc, tam thất không tráng chì hay hút chất, trái nhàu rửa ráo lên men tự nhiên.',
     },
     {
       num: '03',
-      title: 'Tươi lâu',
-      desc: 'Hoa nhập mới mỗi sáng từ Đà Lạt và hoa nhập khẩu, xử lý dưỡng hoa chuẩn kỹ thuật.',
+      title: 'Rượu nếp cái hoa vàng',
+      desc: 'Dùng hoàn toàn rượu nếp ta ủ men truyền thống 42–45 độ, tuyệt đối không cồn công nghiệp, uống êm không đau đầu.',
     },
     {
       num: '04',
-      title: 'Hoá đơn VAT nhanh',
-      desc: 'Hỗ trợ xuất hoá đơn điện tử VAT cho doanh nghiệp chỉ chuẩn đất rừng Nho Quan - Cúc Phương.',
+      title: 'Giao hàng bao bể vỡ',
+      desc: 'Bình thủy tinh bọc màng khí và thùng xốp 3 lớp gửi toàn quốc. Khách được mở kiểm tra hàng trước khi thanh toán.',
     },
   ];
 
@@ -972,7 +977,7 @@ export const AboutPage: React.FC = () => {
               color: '#5f5f61',
             }}
           >
-            Gần 7 năm gìn giữ và lan tỏa tinh hoa đồ ngâm rượu và thảo dược bồi bổ sức khỏe đất rừng Nho Quan - Cúc Phương.
+            Gìn giữ và lan tỏa tinh hoa đồ ngâm rượu và thảo dược bồi bổ sức khỏe đất rừng Nho Quan - Cúc Phương (Ninh Bình).
           </p>
         </div>
       </section>
@@ -994,17 +999,17 @@ export const AboutPage: React.FC = () => {
                 Từng bình rượu là một tấm lòng
               </h2>
               <p className="text-[15px] leading-[1.9] text-[#5f5f61] mb-4">
-                {settings.brandName} bắt đầu từ một quầy hoa nhỏ và giữ nguyên một nguyên tắc đến hôm nay: hoa phải tươi, mẫu phải đúng ảnh, và giờ giao phải chính xác.
+                {settings.brandName} của chị Trương Thúy Hà tại thị trấn Nho Quan, Ninh Bình – cửa ngõ rừng quốc gia Cúc Phương – bắt đầu từ niềm tin mộc mạc: đồ uống vào người và thuốc bồi bổ gia đình thì tuyệt đối không được làm ẩu.
               </p>
               <p className="text-[15px] leading-[1.9] text-[#5f5f61] mb-6">
-                Chúng tôi nhập hoa mỗi sáng, chỉ cắm khi có đơn, và luôn gửi ảnh thành phẩm cho bạn duyệt trước khi giao. Với đơn doanh nghiệp, hoá đơn VAT được xuất chuẩn đất rừng Nho Quan - Cúc Phương.
+                Từng củ tam thất bắc, cân ba kích tím rút lõi, trái nhàu chín mọng hay bình rượu nếp cái hoa vàng đều do chính tay em Hà tuyển chọn, rửa sạch từng kẽ đất, đóng gói kỹ lưỡng và quay ảnh thực tế gửi bác duyệt qua Zalo trước khi gửi đi toàn quốc.
               </p>
 
               <div className="flex flex-wrap gap-3">
                 {[
-                  'Giao gấp trong 90 phút',
-                  'Miễn phí nội thành',
-                  'Thiết kế mẫu riêng',
+                  '100% thảo dược tự nhiên',
+                  'Bao kiểm tra trước khi trả tiền',
+                  'Tư vấn công thức ngâm trọn đời',
                 ].map((badge) => (
                   <span
                     key={badge}
@@ -1018,10 +1023,13 @@ export const AboutPage: React.FC = () => {
             </div>
 
             <div className="lg:col-span-6">
-              <div className="rounded-[18px] overflow-hidden border border-[#ececee]">
+              <div className="rounded-[18px] overflow-hidden border border-[#ececee] bg-[#f4f7f4]">
                 <img
-                  src="https://hoatuoi.webmau68.com/wp-content/uploads/2026/08/gio-hoa-n179-450x600.jpg"
-                  alt="Về chúng tôi"
+                  src="/images/products/about-hathaomoc.jpg"
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/products/hero-hathaomoc.jpg';
+                  }}
+                  alt="Cơ sở thảo dược Hà Thảo Mộc Nho Quan Ninh Bình"
                   referrerPolicy="no-referrer"
                   className="w-full max-h-[440px] object-cover block"
                 />
@@ -1280,7 +1288,7 @@ export const ContactPage: React.FC = () => {
                         fontSize: '14px',
                         fontWeight: 700,
                       }}
-                      className="hover:bg-[#c93a5c] transition-colors border-0 cursor-pointer"
+                      className="hover:bg-[#1b5e20] transition-colors border-0 cursor-pointer"
                     >
                       Gửi yêu cầu tư vấn
                     </button>
@@ -1341,7 +1349,7 @@ export const BlogListPage: React.FC = () => {
                 to={`/tin-tuc/${post.slug}`}
                 className="ht-card flex flex-col no-underline"
               >
-                <div className="relative w-full pt-[64%] overflow-hidden bg-[#f9f5f6]">
+                <div className="relative w-full pt-[64%] overflow-hidden bg-[#f4f7f4]">
                   <img
                     src={post.image}
                     alt={post.title}

@@ -50,12 +50,12 @@ interface CMSContextType {
 }
 
 const STORAGE_KEYS = {
-  SETTINGS: 'ht_cms_settings_v1',
-  CATEGORIES: 'ht_cms_categories_v1',
-  PRODUCTS: 'ht_cms_products_v1',
-  POSTS: 'ht_cms_posts_v1',
-  ORDERS: 'ht_cms_orders_v1',
-  CART: 'ht_cms_cart_v1',
+  SETTINGS: 'hathaomoc_nb_settings_v3',
+  CATEGORIES: 'hathaomoc_nb_categories_v3',
+  PRODUCTS: 'hathaomoc_nb_products_v3',
+  POSTS: 'hathaomoc_nb_posts_v3',
+  ORDERS: 'hathaomoc_nb_orders_v3',
+  CART: 'hathaomoc_nb_cart_v3',
 };
 
 const CMSContext = createContext<CMSContextType | null>(null);

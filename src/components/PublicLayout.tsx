@@ -58,10 +58,10 @@ export const ConsultationBanner: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex flex-wrap sm:flex-nowrap items-center gap-3.5 lg:min-w-[450px]">
+          <div className="flex flex-wrap sm:flex-nowrap items-center gap-3.5 lg:min-w-[485px]">
             <a
               href={`tel:${settings.hotlineRaw}`}
-              className="flex items-center flex-1 min-w-[210px] bg-white rounded-[14px] px-5 py-3.5 transition-transform hover:-translate-y-0.5 no-underline"
+              className="flex items-center flex-1 min-w-[215px] bg-white rounded-[14px] px-4 py-3.5 transition-transform hover:-translate-y-0.5 no-underline"
             >
               <Phone
                 size={25}
@@ -100,7 +100,7 @@ export const ConsultationBanner: React.FC = () => {
               href={`https://zalo.me/${settings.zaloPhone}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center flex-1 min-w-[210px] bg-white rounded-[14px] px-5 py-3.5 transition-transform hover:-translate-y-0.5 no-underline"
+              className="flex items-center flex-1 min-w-[235px] bg-white rounded-[14px] px-4 py-3.5 transition-transform hover:-translate-y-0.5 no-underline"
             >
               <ZaloIcon size={28} className="mr-3.5 flex-shrink-0" />
               <span className="flex flex-col min-w-0">
@@ -327,7 +327,7 @@ export const PublicLayout: React.FC = () => {
       .map(
         (i) =>
           `${i.product.title} (x${i.quantity})${
-            i.includeFreeCard ? ` [Thiệp: ${i.cardNote || 'Có'}]` : ''
+            i.includeFreeCard ? ` [Hướng dẫn ngâm: ${i.cardNote || 'Có'}]` : ''
           }`
       )
       .join(', ');
@@ -383,15 +383,15 @@ export const PublicLayout: React.FC = () => {
           <div className="flex items-center gap-8">
             <span className="inline-flex items-center gap-2">
               <Truck size={15} className="text-[#8f8f92]" strokeWidth={1.7} />
-              {settings.topBarCommitments[0] || 'Miễn phí giao nội thành'}
+              {settings.topBarCommitments[0] || '100% Thảo mộc tự nhiên đất rừng Cúc Phương'}
             </span>
             <span className="inline-flex items-center gap-2">
               <Clock size={15} className="text-[#8f8f92]" strokeWidth={1.7} />
-              {settings.topBarCommitments[1] || 'Giao gấp trong 90 phút'}
+              {settings.topBarCommitments[1] || 'Men nếp ta truyền thống'}
             </span>
             <span className="inline-flex items-center gap-2">
               <FileText size={15} className="text-[#8f8f92]" strokeWidth={1.7} />
-              {settings.topBarCommitments[2] || 'Xuất hoá đơn VAT trong 30 phút'}
+              {settings.topBarCommitments[2] || 'Giao toàn quốc - Kiểm hàng trước khi trả'}
             </span>
           </div>
 
@@ -777,20 +777,22 @@ export const PublicLayout: React.FC = () => {
                     href={settings.facebookUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-full bg-[#c8e6c9] text-[#3a3844] hover:bg-[#2e7d32] hover:text-white flex items-center justify-center transition-colors font-bold text-sm no-underline"
+                    className="w-9 h-9 rounded-full bg-[#c8e6c9] text-[#16302a] hover:bg-[#2e7d32] hover:text-white flex items-center justify-center transition-colors font-bold text-sm no-underline"
                     aria-label="Facebook"
                   >
                     f
                   </a>
-                  <a
-                    href={settings.instagramUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-full bg-[#c8e6c9] text-[#3a3844] hover:bg-[#2e7d32] hover:text-white flex items-center justify-center transition-colors text-xs font-bold no-underline"
-                    aria-label="Instagram"
-                  >
-                    IG
-                  </a>
+                  {settings.instagramUrl && (
+                    <a
+                      href={settings.instagramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-9 h-9 rounded-full bg-[#c8e6c9] text-[#16302a] hover:bg-[#2e7d32] hover:text-white flex items-center justify-center transition-colors text-xs font-bold no-underline"
+                      aria-label="Instagram"
+                    >
+                      IG
+                    </a>
+                  )}
                   <a
                     href={`https://zalo.me/${settings.zaloPhone}`}
                     target="_blank"
@@ -944,12 +946,12 @@ export const PublicLayout: React.FC = () => {
         {/* Bottom Copyright Bar */}
         <div
           style={{
-            backgroundColor: '#fdf5f8',
-            borderTop: '1px solid #e2e8f0',
+            backgroundColor: '#ebf3ec',
+            borderTop: '1px solid #dcfce7',
             padding: '18px 0',
           }}
         >
-          <div className="ht-container text-center text-[13px] text-[#6b6673]">
+          <div className="ht-container text-center text-[13px] text-[#4b5563]">
             <div>
               © 2026 {settings.brandName} – {settings.brandSub} – Hotline{' '}
               <a
@@ -960,7 +962,7 @@ export const PublicLayout: React.FC = () => {
               </a>
             </div>
             {settings.copyrightNote && (
-              <div className="text-[11.5px] text-[#8f8f92] mt-1">
+              <div className="text-[11.5px] text-[#6b7280] mt-1">
                 {settings.copyrightNote}
               </div>
             )}
@@ -968,7 +970,7 @@ export const PublicLayout: React.FC = () => {
         </div>
       </footer>
 
-      {/* Floating Back-to-top button (Exact match to bottom-right circle in screenshot) */}
+      {/* Floating Back-to-top button */}
       {showBackToTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -1001,7 +1003,7 @@ export const PublicLayout: React.FC = () => {
           <div className="relative w-full max-w-[400px] bg-white h-full z-10 flex flex-col shadow-2xl">
             <div className="px-5 py-4 border-b border-[#ececee] flex items-center justify-between">
               <h3 className="text-lg font-bold text-[#16302a] m-0">
-                Giỏ hoa của bạn ({totalCartItems})
+                Giỏ hàng của bạn ({totalCartItems})
               </h3>
               <button
                 onClick={() => setCartOpen(false)}
@@ -1015,13 +1017,13 @@ export const PublicLayout: React.FC = () => {
               <div className="flex-1 flex flex-col items-center justify-center p-8 text-center">
                 <ShoppingBasket size={48} className="text-[#81c784] mb-3" />
                 <p className="text-[15px] text-[#5f5f61] mb-4">
-                  Chưa có mẫu hoa nào trong giỏ hàng.
+                  Chưa có sản phẩm thảo dược nào trong giỏ hàng.
                 </p>
                 <button
                   onClick={() => setCartOpen(false)}
-                  className="px-6 py-2.5 rounded-full bg-[#2e7d32] text-white font-bold text-sm border-0 cursor-pointer"
+                  className="px-6 py-2.5 rounded-full bg-[#2e7d32] hover:bg-[#1b5e20] text-white font-bold text-sm border-0 cursor-pointer transition-colors"
                 >
-                  Tiếp tục chọn hoa
+                  Tiếp tục chọn thảo dược
                 </button>
               </div>
             ) : (
@@ -1047,7 +1049,7 @@ export const PublicLayout: React.FC = () => {
                         </div>
                         {item.includeFreeCard && (
                           <div className="text-xs text-[#2e7d32] mt-1">
-                            ✓ Kèm thiệp viết tay miễn phí
+                            ✓ Kèm tờ hướng dẫn ngâm & sử dụng
                             {item.cardNote ? `: "${item.cardNote}"` : ''}
                           </div>
                         )}
@@ -1096,7 +1098,7 @@ export const PublicLayout: React.FC = () => {
                     <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm flex items-center gap-2.5">
                       <CheckCircle2 size={20} className="text-emerald-600 flex-shrink-0" />
                       <span>
-                        Đã gửi đơn đặt hoa thành công! Nhân viên {settings.brandName} sẽ gọi xác nhận ngay.
+                        Đã gửi đơn đặt hàng thành công! Chị Hà ({settings.brandName}) sẽ gọi hoặc nhắn Zalo xác nhận ngay.
                       </span>
                     </div>
                   ) : (
@@ -1105,14 +1107,14 @@ export const PublicLayout: React.FC = () => {
                       className="bg-[#f0fdf4] p-4 rounded-2xl border border-[#c8e6c9] space-y-3"
                     >
                       <div className="text-xs font-bold uppercase tracking-wider text-[#2e7d32]">
-                        Thông tin người đặt hoa nhanh
+                        Thông tin đặt hàng nhanh
                       </div>
                       <input
                         type="text"
                         required
                         value={customerName}
                         onChange={(e) => setCustomerName(e.target.value)}
-                        placeholder="Họ và tên của bạn *"
+                        placeholder="Họ và tên của bác *"
                         className="w-full h-10 px-3.5 rounded-xl border border-[#ececee] bg-white text-sm outline-none"
                       />
                       <input
@@ -1127,14 +1129,14 @@ export const PublicLayout: React.FC = () => {
                         rows={2}
                         value={customerNote}
                         onChange={(e) => setCustomerNote(e.target.value)}
-                        placeholder="Địa chỉ nhận hoa, khung giờ giao, nội dung thiệp..."
+                        placeholder="Địa chỉ nhận hàng, ghi chú thái lát / xay bột / dung tích bình..."
                         className="w-full p-3 rounded-xl border border-[#ececee] bg-white text-sm outline-none resize-none"
                       />
                       <button
                         type="submit"
-                        className="w-full py-3 rounded-full bg-[#2e7d32] hover:bg-[#c93a5c] text-white font-bold text-sm border-0 cursor-pointer transition-colors"
+                        className="w-full py-3 rounded-full bg-[#2e7d32] hover:bg-[#1b5e20] text-white font-bold text-sm border-0 cursor-pointer transition-colors"
                       >
-                        Hoàn tất đặt hoa ({totalCartPrice.toLocaleString('vi-VN')} ₫)
+                        Hoàn tất đặt hàng ({totalCartPrice.toLocaleString('vi-VN')} ₫)
                       </button>
                     </form>
                   )}

@@ -31,6 +31,8 @@ export default function App() {
             <Route path="/tin-tuc/:slug" element={<BlogDetailPage />} />
             <Route path="/gioi-thieu" element={<AboutPage />} />
             <Route path="/lien-he" element={<ContactPage />} />
+            <Route path="/huong-dan-dat-hang" element={<AboutPage />} />
+            <Route path="/chinh-sach-giao-hang" element={<AboutPage />} />
             <Route path="/huong-dan-dat-hoa" element={<AboutPage />} />
             <Route path="/chinh-sach-giao-hoa" element={<AboutPage />} />
             <Route path="/chinh-sach-doi-tra" element={<AboutPage />} />
