@@ -815,15 +815,15 @@ export const PublicLayout: React.FC = () => {
                     color: '#3a3844',
                   }}
                 >
-                  DANH MỤC HOA
+                  DANH MỤC THẢO DƯỢC
                 </h4>
                 <div className="ht-footer-divider" />
                 <ul className="space-y-3 list-none p-0 m-0">
                   {[
-                    { name: 'Hoa Bó', to: '/danh-muc/bo-hoa' },
-                    { name: 'Giỏ Hoa', to: '/danh-muc/gio-hoa' },
-                    { name: 'Hoa Khai Trương', to: '/danh-muc/hoa-khai-truong' },
-                    { name: 'Hoa Viếng', to: '/danh-muc/hoa-vieng' },
+                    { name: 'Đồ Ngâm Rượu Quý', to: '/danh-muc/do-ngam-ruou' },
+                    { name: 'Tam Thất Bắc Rừng Già', to: '/danh-muc/tam-that-bac' },
+                    { name: 'Trái Nhàu & Mật Ong', to: '/danh-muc/trai-nhau-mat-ong' },
+                    { name: 'Thảo Dược & Trà Dưỡng Sinh', to: '/danh-muc/thao-duoc-tra' },
                   ].map((c) => (
                     <li key={c.to}>
                       <Link
@@ -855,11 +855,11 @@ export const PublicLayout: React.FC = () => {
                 <div className="ht-footer-divider" />
                 <ul className="space-y-3 list-none p-0 m-0">
                   {[
-                    { name: 'Hướng dẫn đặt hoa', to: '/gioi-thieu' },
-                    { name: 'Chính sách giao hoa', to: '/gioi-thieu' },
-                    { name: 'Chính sách đổi trả', to: '/gioi-thieu' },
+                    { name: 'Hướng dẫn đặt hàng', to: '/gioi-thieu' },
+                    { name: 'Chính sách giao hàng toàn quốc', to: '/gioi-thieu' },
+                    { name: 'Cam kết bọc xốp chống vỡ', to: '/gioi-thieu' },
                     { name: 'Chính sách bảo mật', to: '/lien-he' },
-                    { name: 'Tin tức & Cẩm nang hoa', to: '/tin-tuc' },
+                    { name: 'Cẩm nang ngâm rượu & dưỡng sinh', to: '/tin-tuc' },
                   ].map((item) => (
                     <li key={item.name}>
                       <Link
@@ -874,7 +874,7 @@ export const PublicLayout: React.FC = () => {
                 </ul>
               </div>
 
-              {/* Col 4: Liên hệ đặt hoa (3 cols) */}
+              {/* Col 4: Liên hệ đặt hàng (3 cols) */}
               <div className="lg:col-span-3">
                 <h4
                   style={{
@@ -886,7 +886,7 @@ export const PublicLayout: React.FC = () => {
                     color: '#3a3844',
                   }}
                 >
-                  LIÊN HỆ ĐẶT HOA
+                  LIÊN HỆ ĐẶT HÀNG
                 </h4>
                 <div className="ht-footer-divider" />
                 <ul className="space-y-3.5 list-none p-0 m-0 text-[14px] text-[#6b6673]">
@@ -895,7 +895,7 @@ export const PublicLayout: React.FC = () => {
                       <Phone size={15} />
                     </span>
                     <div>
-                      <div className="text-xs text-[#8f8f92]">Hotline đặt hoa</div>
+                      <div className="text-xs text-[#8f8f92]">Hotline đặt hàng</div>
                       <a
                         href={`tel:${settings.hotlineRaw}`}
                         className="font-bold text-[15px] text-[#3a3844] hover:text-[#2e7d32] no-underline"
