@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+:root {
+  --primary-color: #2e7d32;
+  --fs-color-primary: #2e7d32;
+  --fs-color-secondary: #1b382b;
+  --fs-color-success: #2e7d32;
+  --fs-color-alert: #d97706;
+  --fs-color-base: #4b5563;
+  --ht-green: #1b382b;
+  --ht-ink: #1f2937;
+  --ht-body: #4b5563;
+  --ht-mute: #6b7280;
+  --ht-bg: #ffffff;
+  --ht-bg-soft: #f8faf8;
+  --ht-blush-50: #f0fdf4;
+  --ht-blush-100: #e8f5e9;
+  --ht-blush-200: #c8e6c9;
+  --ht-blush-300: #81c784;
+  --ht-line: #e2e8f0;
+  --ht-line-soft: #f1f5f9;
+  --ht-radius: 14px;
+  --ht-radius-sm: 12px;
+  --ht-display: 'Be Vietnam Pro', "Playfair Display", "Times New Roman", serif;
+  --ht-foot-bg: #f4f7f4;
+  --ht-foot-line: #e2e8f0;
+  --ht-foot-title: #1f2937;
+  --ht-foot-body: #4b5563;
+}
+
+body {
+  font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--ht-body);
+  background-color: var(--ht-bg);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+.ht-container {
+  width: 100%;
+  max-width: 1290px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Section Title & Floral Divider */
+.ht-sec-header {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.ht-sec-eyebrow {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fs-color-primary);
+}
+
+.ht-sec-title-text {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: var(--ht-display);
+  font-size: clamp(26px, 2.9vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ht-green);
+}
+
+.ht-sec-title-text::after {
+  content: "🌿";
+  display: block;
+  width: 96px;
+  height: 20px;
+  margin: 10px auto 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Category & Product Cards */
+.ht-card {
+  overflow: hidden;
+  height: 100%;
+  border: 1px solid var(--ht-line);
+  border-radius: var(--ht-radius);
+  background: #ffffff;
+  transition: border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.ht-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ht-blush-300);
+}
+
+.ht-card:hover .ht-card-title {
+  color: var(--fs-color-primary);
+}
+
+.ht-card-title {
+  transition: color 0.18s ease;
+}
+
+/* Category Circle / Card */
+.ht-cat-img-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 9999px;
+  margin: 0 auto 16px;
+  width: 140px;
+  box-shadow: 0 4px 14px rgba(46, 125, 50, 0.12);
+}
+
+.ht-cat-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.ht-card:hover .ht-cat-img-wrap img {
+  transform: scale(1.08);
+}
+
+/* Hero Section */
+.ht-hero-box {
+  background: linear-gradient(135deg, #1b382b 0%, #2e7d32 100%);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 48px 36px;
+}
+
+/* Zalo Pulse Floating */
+@keyframes zalo-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(46, 125, 50, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 125, 50, 0);
+  }
+}
+
+.zalo-float-btn {
+  animation: zalo-pulse 2s infinite;
+}
